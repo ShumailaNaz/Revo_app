@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Reviews from './components/Reviews';
 
 function App() {
   console.log("hello");
   return (
     <div className="App">
-     
+     <Reviews />
     </div>
   );
 }
