@@ -32,3 +32,10 @@
     cursor: pointer;
     font-size: 2em;
 }
+
+.signup-form input[type="checkbox"] {
+	width: unset;
+	margin-right: 8px;
+    padding: 12px 0px;
+	text-align: center
+}
