@@ -31,7 +31,7 @@ export default function Signup() {
           {/* {!isPending && <button className='btn'>Login</button>}
          {isPending && <button className='btn'disabled>loading</button>} */}
          {/* {error && <p>{error}</p>} */}
-         <p>Already a member? <Link to='/Login'>Login</Link></p>
+         <p>Already a member? <Link to='/login'>Login</Link></p>
         </form>
         </div>
       )
