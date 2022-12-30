@@ -1,15 +1,20 @@
 import React from 'react'
 import styles from './Signup.module.css'
 import { useState } from 'react';
+import {useSignup} from '../hooks/useSignup';
 import { Link } from 'react-router-dom';
+import { useLogout } from '../hooks/useLogout';
+
 export default function Signup() {
     const [email,setemail]=useState('');
     const [password,setpassword]=useState('');
-    const [name,setName]=useState('')
-    
+    const [displayName,setdisplayName]=useState('')
+    const { signup,error,ispending }=useSignup()
+    const{logout}=useLogout()    
     const handlesubmit =(e)=>{
         e.preventDefault()
-       }
+        signup(email,password,displayName);
+      }
        
     return (
         <div className={styles['main-form']}>
@@ -17,7 +22,7 @@ export default function Signup() {
           <h2>Join to post your review.</h2>
           <label>
       <span>user name:</span>
-      <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
+      <input type="text" onChange={(e)=>setdisplayName(e.target.value)} value={displayName}/>
          </label>
           <label>
             <span>email address:</span>
@@ -31,7 +36,16 @@ export default function Signup() {
           {/* {!isPending && <button className='btn'>Login</button>}
          {isPending && <button className='btn'disabled>loading</button>} */}
          {/* {error && <p>{error}</p>} */}
-         <p>Already a member? <Link to='/login'>Login</Link></p>
+
+         <div className={styles['checkbox']}>
+         <input type="checkbox" id="checkbox" />
+						<label className="checkbox-label" htmlFor="checkbox">
+							Accept T&Cs and Privacy Policy
+						</label>
+					</div>
+         <p>Already a member? <Link to='/Login'>Login</Link></p>
+         <button className={styles['button']} onClick={logout}>Logout</button>
+
         </form>
         </div>
       )

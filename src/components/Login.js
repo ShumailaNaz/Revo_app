@@ -2,20 +2,21 @@ import React from 'react'
 import styles from './Login.module.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-
+import { useLogin } from '../hooks/useLogin';
 
 export default function Login() {
 const [email,setemail]=useState('');
 const [password,setpassword]=useState('');
-
+const  { login,error,ispending }=useLogin()
 const handlesubmit =(e)=>{
  e.preventDefault()
+ login(email,password)
 }
 
     return (
     <div className={styles['main-form']}>
      <form onSubmit={handlesubmit} className={styles['login-form']}>
-      <h2>Welcome back.</h2>
+      <h2>Welcome back</h2>
       <label>
         <span>email address:</span>
         <input type="email" onChange={(e)=>setemail(e.target.value)} value={email}/>
