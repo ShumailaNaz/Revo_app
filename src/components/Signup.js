@@ -36,6 +36,7 @@ export default function Signup() {
           {/* {!isPending && <button className='btn'>Login</button>}
          {isPending && <button className='btn'disabled>loading</button>} */}
          {/* {error && <p>{error}</p>} */}
+
          <div className={styles['checkbox']}>
          <input type="checkbox" id="checkbox" />
 						<label className="checkbox-label" htmlFor="checkbox">
@@ -44,6 +45,7 @@ export default function Signup() {
 					</div>
          <p>Already a member? <Link to='/Login'>Login</Link></p>
          <button className={styles['button']} onClick={logout}>Logout</button>
+
         </form>
         </div>
       )

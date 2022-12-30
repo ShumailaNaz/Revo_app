@@ -1,20 +1,34 @@
 import './App.css';
-import Login from './components/Login';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Post from './pages/Post/Post';
+import Search from './pages/Search/Search';
+import Review from './pages/Review/Review';
+import Navbar from './components/Navbar';
+import Login from './components/Login'
 import Signup from './components/Signup';
+
+
+
 function App() {
-  // console.log("hello");
+
   return (
-    <div className="App"> 
+
+    <div className="App">
+      
     <BrowserRouter>
+    <Navbar />
     <Routes>
-    <Route path='/Login' element={<Login/>} ></Route>
-    <Route path='/Signup' element={<Signup/>} ></Route>
+    <Route path='/' element={<Home />} ></Route>
+    <Route path='/post' element={<Post />} ></Route>
+    <Route path='/search' element={<Search />} ></Route>
+    <Route path='/reviews/:id' element={<Review />} ></Route>
+    <Route path='/login' element={<Login/>} ></Route>
+    <Route path='/signup' element={<Signup />} ></Route>
     </Routes>
     </BrowserRouter> 
-     {/* <Login/> */}
-     {/* <Signup/> */}
-    </div>
+  
+     </div>
   );
 }
 
