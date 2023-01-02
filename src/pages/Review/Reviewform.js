@@ -32,6 +32,8 @@ export default function Reviewform({ uid }) {
     <>
     <h3>Add review</h3>
     <form onSubmit={handleSubmit}>
+      {documents &&(
+        <>
         <label><span>Select restaurant:</span>
        <select name="" id=""
        onChange={(e)=>setRestaurant(e.target.value)}
@@ -52,6 +54,8 @@ export default function Reviewform({ uid }) {
      </textarea>
         </label>
         <button>Add Review</button>
+        </>
+        )}
     </form>
     </>
   )
