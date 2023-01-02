@@ -7,7 +7,8 @@ import { useLogin } from '../hooks/useLogin';
 export default function Login() {
 const [email,setemail]=useState('');
 const [password,setpassword]=useState('');
-const  { login,error,ispending }=useLogin()
+const  { login,error,isPending }=useLogin()
+
 const handlesubmit =(e)=>{
  e.preventDefault()
  login(email,password)
@@ -15,20 +16,19 @@ const handlesubmit =(e)=>{
 
     return (
     <div className={styles['main-form']}>
-     <form onSubmit={handlesubmit} className={styles['login-form']}>
+     <form onSubmit={ handlesubmit } className={styles['login-form']}>
       <h2>Welcome back</h2>
       <label>
-        <span>email address:</span>
+        <span>Email address:</span>
         <input type="email" onChange={(e)=>setemail(e.target.value)} value={email}/>
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input type="password" onChange={(e)=>setpassword(e.target.value)} value={password}/>
       </label>
-      <button className={styles['button']}>Login</button>
-      {/* {!isPending && <button className='btn'>Login</button>}
-     {isPending && <button className='btn'disabled>loading</button>} */}
-     {/* {error && <p>{error}</p>} */}
+      {!isPending &&<button className={styles['button']}>Login</button>}
+      {isPending && <button className='btn' disabled >Loading...</button>}
+     {error && <p>{error}</p>}
      <p>Not a member? <Link to='/Signup'>Signup</Link></p>
     </form>
     </div>

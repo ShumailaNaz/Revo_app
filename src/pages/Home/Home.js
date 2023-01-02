@@ -1,16 +1,17 @@
 import React from 'react'
 // CSS
 import styles from './Home.module.css';
-import { useFetch } from '../../hooks/useFetch'
+// hooks
+import { useDocuments } from '../../hooks/useDocuments';
 // import Component
-import ReviewList from '../../components/ReviewList';
+
+import ReviewList from '../Review/ReviewList';
 
 export default function Home() {
-    const { data, isPending, error}=useFetch()
+ const { documents,error }=useDocuments('reviews')
   return (
     <div className={styles['home']}>
-        {<ReviewList />}
-        
+      {documents && <ReviewList reviews={documents} /> }
         </div>
   )
 }

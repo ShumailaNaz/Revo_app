@@ -4,47 +4,43 @@ import { useAuthContext } from "./useAuthContext";
 
 
 export const useLogin = () => {
-const[iscancelled,setiscancelled]=useState(null)
-const[error,seterror]=useState(null)
-const[ispending,setispending]=useState(false)   
+const[isCancelled,setIsCancelled]=useState(false)
+const[error,setError]=useState(null)
+const[isPending,setIsPending]=useState(false)   
 const{ dispatch } =useAuthContext()
  
  const login = async(email,password) =>{
-    seterror(null)
-    setispending(true)
+    setError(null)
+    setIsPending(true)
 
     try{
          //logout user
-         const res = await projectAuth.signInWithEmailAndPassword(email,password)     
-
-
+        const res= await projectAuth.signInWithEmailAndPassword(email,password)     
          //dispatch login option
-         dispatch({type: 'LOGIN' ,payload:res.user})
+         dispatch({type: 'LOGIN',payload:res.user})
        
 
          //update state
-         if(!iscancelled){
-            setispending(false)
-            seterror(null)
+         if(!isCancelled){
+            setIsPending(false)
+            setError(null)
          }
 
     }
     catch(err){
-        if(!iscancelled){
+        if(!isCancelled){
         console.log(err.message)
-        seterror(err.message)
-        setispending(false)
+        setError(err.message)
+        setIsPending(false)
         }       
     }
 
  }
 
  useEffect(() => {
- return () => setiscancelled(true)
-        
-    
+ return () => setIsCancelled(true)
  }, [])
- return { login,error,ispending }
+ return { login,error,isPending }
 }
 
 

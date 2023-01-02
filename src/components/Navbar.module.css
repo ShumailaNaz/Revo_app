@@ -14,7 +14,7 @@
     color: #fff;
     text-decoration: none;
 }
-.navbar a:last-child{
+.navbar .btn{
     color: #fff;
     text-decoration: none;
     margin-left: 40px;
