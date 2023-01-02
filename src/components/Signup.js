@@ -3,14 +3,14 @@ import styles from './Signup.module.css'
 import { useState } from 'react';
 import {useSignup} from '../hooks/useSignup';
 import { Link } from 'react-router-dom';
-import { useLogout } from '../hooks/useLogout';
 
-export default function Signup() {
+
+   export default function Signup() {
     const [email,setemail]=useState('');
     const [password,setpassword]=useState('');
     const [displayName,setdisplayName]=useState('')
     const { signup,error,ispending }=useSignup()
-    const{logout}=useLogout()    
+     
     const handlesubmit =(e)=>{
         e.preventDefault()
         signup(email,password,displayName);
@@ -44,7 +44,7 @@ export default function Signup() {
 						</label>
 					</div>
          <p>Already a member? <Link to='/Login'>Login</Link></p>
-         <button className={styles['button']} onClick={logout}>Logout</button>
+        
 
         </form>
         </div>

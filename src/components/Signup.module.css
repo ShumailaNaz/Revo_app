@@ -1,7 +1,9 @@
 .signup-form{
-    max-width: 360px;
+    max-width: 416px;
     margin: 60px auto;
     padding: 20px;
+    background-color: khaki;
+    border-radius: 10px;
 }
 
 .signup-form label{
@@ -23,8 +25,8 @@
 }
 
 .signup-form button{
-    background: springgreen;
-    border: 2px solid #1f9751;
+    background: black;
+    border: 2px solid blanchedalmond;
     padding: 6px 12px;
     border-radius: 20px;
     color: #fff;

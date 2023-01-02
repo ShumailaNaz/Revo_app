@@ -1,8 +1,14 @@
 .navbar{
-    background: #746e7c;
+    background:rgb(40, 37, 37);
     padding: 20px;
     color: #fff;
 }
+
+.navbar h1{
+    font-size: 40px;
+    font-style: oblique;
+}
+
 .navbar nav{
     display: flex;
     align-items: center;
@@ -14,6 +20,14 @@
     color: #fff;
     text-decoration: none;
 }
+
+.navbar ul{
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px;
+    align-items: center;
+    list-style-type: none;
+}
 .navbar a:last-child{
     color: #fff;
     text-decoration: none;
@@ -21,4 +35,21 @@
     padding:8px;
     border: 1px solid #fff;
     border-radius: 4px;
+}
+.navbar a:last-child :hover{
+   background-color: khaki;
+}
+.navbar button{
+    background: springgreen;
+    border: 2px solid #1f9751;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 2em;
+}
+.navbar ul{
+    text-decoration: none;
+display: flex;
 }

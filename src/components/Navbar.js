@@ -1,7 +1,9 @@
-import logo from '../assets/navbar/logo1.png'
+// import logo from '../assets/navbar/logo1.png'
 // CSS
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom'
+
+import Searchbar from './Searchbar'
 
 export default function Navbar() {
   return (
@@ -18,6 +20,7 @@ export default function Navbar() {
         </div> */}
         <nav>
           <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
+          <Searchbar/>
           <Link to="/login">Post a Review</Link>
         </nav>
     </div>

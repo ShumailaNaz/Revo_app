@@ -3,11 +3,15 @@ import styles from './Login.module.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useLogin } from '../hooks/useLogin';
+import { useAuthContext } from '../hooks/useAuthContext';
+
 
 export default function Login() {
 const [email,setemail]=useState('');
 const [password,setpassword]=useState('');
 const  { login,error,ispending }=useLogin()
+const {user}=useAuthContext()
+
 const handlesubmit =(e)=>{
  e.preventDefault()
  login(email,password)
@@ -25,10 +29,7 @@ const handlesubmit =(e)=>{
         <span>password:</span>
         <input type="password" onChange={(e)=>setpassword(e.target.value)} value={password}/>
       </label>
-      <button className={styles['button']}>Login</button>
-      {/* {!isPending && <button className='btn'>Login</button>}
-     {isPending && <button className='btn'disabled>loading</button>} */}
-     {/* {error && <p>{error}</p>} */}
+     <button className={styles['button']}>Login</button>    
      <p>Not a member? <Link to='/Signup'>Signup</Link></p>
     </form>
     </div>
