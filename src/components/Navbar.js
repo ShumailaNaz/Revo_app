@@ -1,11 +1,15 @@
 // import logo from '../assets/navbar/logo1.png'
 // CSS
 import styles from './Navbar.module.css'
+import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from '../hooks/useAuthContext'
 import { Link } from 'react-router-dom'
 
 import Searchbar from './Searchbar'
 
 export default function Navbar() {
+  const { logout }=useLogout();
+  const { user }=useAuthContext()
   return (
   
     <div className={styles['navbar']}>
@@ -19,9 +23,23 @@ export default function Navbar() {
          
         </div> */}
         <nav>
+          
           <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
-          <Searchbar/>
-          <Link to="/login">Post a Review</Link>
+          
+          
+          {!user&&(
+          <>
+           <Link to="/login" className={styles['btn']}>Login</Link>
+           <Link to="/signup" className={styles['btn']}>Signup</Link>
+          </>
+        )}
+       {user &&( <>
+       <h5>Hey! { user.displayName }</h5>
+        <Link to="/login" className={styles['btn']}>Post a Review</Link>
+       <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
+       </>
+       )
+       }
         </nav>
     </div>
   

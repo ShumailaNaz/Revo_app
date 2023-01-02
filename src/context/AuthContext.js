@@ -4,7 +4,7 @@ import { projectAuth } from "../firebase/config";
 
  export const AuthContext = createContext()
 
- export const authreducer =(state,action)=>{
+ export const authReducer =(state,action)=>{
   switch(action.type){
   case 'LOGIN' :
     return {...state,user:action.payload } 
@@ -18,7 +18,7 @@ import { projectAuth } from "../firebase/config";
 } 
 
 export const AuthContextProvider =({children})=>{
-    const [state, dispatch]=useReducer(authreducer,{
+    const [state, dispatch]=useReducer(authReducer,{
         user:null,
         authIsReady :false
     })

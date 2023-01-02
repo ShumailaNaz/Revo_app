@@ -1,48 +1,48 @@
 import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
 
 export const useLogout = () => {
-const[iscancelled,setiscancelled]=useState(null)
-const[error,seterror]=useState(null)
-const[ispending,setispending]=useState(false)   
+const[isCancelled,setIsCancelled]=useState(false)
+const[error,setError]=useState(null)
+const[isPending,setIsPending]=useState(false)   
 const{ dispatch } =useAuthContext()
+const navigation =useNavigate()
  
  const logout = async() =>{
-    seterror(null)
-    setispending(true)
+    setError(null)
+    setIsPending(true)
 
     try{
          //logout user
          await projectAuth.signOut()     
          //dispatch login option
          dispatch({type: 'LOGOUT'})
-       
+       navigation('/')
 
          //update state
-         if(!iscancelled){
-            setispending(false)
-            seterror(null)
+         if(!isCancelled){
+            setIsPending(false)
+            setError(null)
          }
 
     }
     catch(err){
-        if(!iscancelled){
+        if(!isCancelled){
         console.log(err.message)
-        seterror(err.message)
-        setispending(false)
+        setError(err.message)
+        setIsPending(false)
         }       
     }
 
  }
 
  useEffect(() => {
- return () => setiscancelled(true)
-        
-    
+ return () => setIsCancelled(true)
  }, [])
- return { logout,error,ispending }
+ return { logout,error,isPending }
 }
 
 

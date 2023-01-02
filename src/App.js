@@ -1,5 +1,7 @@
 import './App.css';
-import { BrowserRouter,Route,Routes} from 'react-router-dom';
+import { BrowserRouter,Route,Routes,redirect } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
+
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
 import Search from './pages/Search/Search';
@@ -12,12 +14,12 @@ import Reviews from './components/Reviews';
 // import Picture from './data/Picture';
 
 function App() {
- const {authIsReady,user}=useAuthContext()
+  const {authIsReady, user} =useAuthContext()
 
  return (
 
     <div className="App">
-    {authIsReady && (
+      {authIsReady && (
     <BrowserRouter>
     {/* <Navbar /> */}
     <Routes>
@@ -25,13 +27,13 @@ function App() {
     {/* <Route path='/picture' element={<Picture/>} ></Route> */}
     <Route path='/post' element={user ? <Post/> : <Login/>}></Route>
     <Route path='/search' element={<Search />} ></Route>
-    <Route path='/reviews' element={<Reviews/>} ></Route>
-    <Route path='/login' element={user ? <Post/> :<Login/>}></Route>
-    <Route path='/signup' element={user ? <Post/> :<Signup/>} ></Route>
+    <Route path='/reviews/:id' element={!user ? <Review /> : <Home />} ></Route>
+    <Route path='/login' element={!user ? <Login/> : <Review />} ></Route>
+    <Route path='/signup' element={!user ? <Signup/> : <Review />} ></Route>
     </Routes>
     </BrowserRouter> 
-    )}    
-   </div>
+  )}
+     </div>
   );
 }
 
