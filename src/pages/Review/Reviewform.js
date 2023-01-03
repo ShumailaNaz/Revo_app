@@ -1,7 +1,7 @@
 import { useState ,useEffect } from 'react'
 import { useFirestore } from '../../hooks/useFirestore';
 import { useDocuments } from '../../hooks/useDocuments';
-
+import styles from './Reviewform.module.css'
 
 export default function Reviewform({ uid }) {
   const { documents,error }=useDocuments('restaurants')
@@ -29,7 +29,7 @@ export default function Reviewform({ uid }) {
   
   
   return (
-    <>
+    <div className={styles['review-form']}>
     <h3>Add review</h3>
     <form onSubmit={handleSubmit}>
       {documents &&(
@@ -57,6 +57,6 @@ export default function Reviewform({ uid }) {
         </>
         )}
     </form>
-    </>
+    </div>
   )
 }

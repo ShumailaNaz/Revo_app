@@ -1,6 +1,47 @@
-.container {
+/* .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   max-width: 960px;
   margin: 60px auto;
+}
+.container .content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container .review-list{
+  display: flex;
+
+}
+
+
+
+
+.review-list .card{
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+} */
+
+
+
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: -80px;
+}
+
+.container .content{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-right: 10px;
+  /* padding: 1px; */
+}
+.container .sidebar{
+    padding: 20px;
 }

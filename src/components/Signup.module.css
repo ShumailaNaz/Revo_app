@@ -1,9 +1,14 @@
 .signup-form{
+    background-color: khaki;
     max-width: 416px;
     margin: 60px auto;
     padding: 20px;
-    background-color: khaki;
-    border-radius: 10px;
+    border-radius: 10px; ;
+}
+.signup-form:hover{
+    transition: all 0.25s;
+    background-color: #ecc93f;
+
 }
 
 .signup-form label{

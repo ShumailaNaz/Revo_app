@@ -44,7 +44,7 @@ export default function Signup() {
 						</label>
 					</div>
          <p>Already a member? <Link to='/Login'>Login</Link></p>
-         <button className={styles['button']} onClick={logout}>Logout</button>
+         {/* <button className={styles['button']} onClick={logout}>Logout</button> */}
 
         </form>
         </div>

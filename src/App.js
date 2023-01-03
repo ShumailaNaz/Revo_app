@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter,Route,Routes,redirect } from 'react-router-dom';
-import { useAuthContext } from './hooks/useAuthContext';
+// import { useAuthContext } from './hooks/useAuthContext';
 
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       {authIsReady && (
     <BrowserRouter>
-    {/* <Navbar /> */}
+    <Navbar />
     <Routes>
     <Route path='/' element={<Home />} ></Route>
     {/* <Route path='/picture' element={<Picture/>} ></Route> */}

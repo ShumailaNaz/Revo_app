@@ -1,0 +1,50 @@
+.review-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-left: 96px;  
+  }
+  .review1-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-left: 96px;  
+
+  }
+
+  .review-list .card{
+    background:khaki;
+    color: #333;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    width: 300px;
+  }
+  .review-list .card:hover{
+    /* transform: rotate(3deg); */
+    background: #f5cb22; 
+}
+
+.review-list .card h3{
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.review-list .card p{
+    color: #524949;
+    font-size: 0.9em;
+}
+
+.review-list .card div{
+    color: #555;
+    font-size: 0.7em;
+    margin: 20px 0;
+    line-height: 1.5em;
+}
+  
