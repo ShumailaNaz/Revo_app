@@ -2,19 +2,16 @@
 import styles from './Searchbar.module.css'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useState } from 'react'
-import { useNavigate} from 'react-router-dom'
+
 
 export default function Searchbar() {
     const [term,setTerm]=useState('')
     const{ term1,setTerm1 } =useAuthContext()
-    console.log(term1);
- 
-    const navigation=useNavigate()
+   
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        // 
-        navigation(`/search?q=${term1}`)
+     
     }
 
 

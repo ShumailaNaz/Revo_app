@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
@@ -7,7 +8,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
-
+  const navigation=useNavigate()
   const signup = async (email, password, displayName) => {
     setError(null);
     setIsPending(true);
@@ -29,7 +30,7 @@ export const useSignup = () => {
 
       //dispatch login option
       dispatch({ type: "LOGIN", payload: res.user });
-
+      navigation('/review')
       //update state
       if (!isCancelled) {
         setIsPending(false);

@@ -33,14 +33,14 @@ export default function Navbar() {
               <Link onClick={closemenu} to="/signup" className={styles['btn']}>Signup</Link>
             </div>
 
-        
+        )}
  
           
           
       
             {user && (<div className={styles['navbar-links']}>
               <h5>Hey! {user.displayName}</h5>
-              <Link to="/login" className={styles['btn']}>Post a Review</Link>
+              <Link to="/review" className={styles['btn']}>Post a Review</Link>
               <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
             </div>
             )
@@ -50,33 +50,3 @@ export default function Navbar() {
 
   )
 }
-// const Container=styled.div`
-// max-width:100vw;
-// background-color:#f2f2f2;
-// box-shadow:1px 1px 1px 1px ;rgba(0,0,0,0.5);
-// padding:20px;
-// .navbar{
-//   display:flex;
-//   justify-content:space-around;
-// }
-// .search{
-
-// }
-// img{
-//   width:200px;
-// }
-// input,button{
-//   margin-right:20px;
-//   padding:10px;
-//   background:none;
-//   border:none;
-//   box-shadow:0px 0px  1px 2px rgba(0,0,0,0.5);
-//   border-radius:10px;
-//   font-size:16px;
-// }
-// input:focus{
-//   border:none;
-//   outline:0;
-// }
-
-// `

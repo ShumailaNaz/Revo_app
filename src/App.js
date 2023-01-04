@@ -3,7 +3,7 @@ import { BrowserRouter,Route,Routes,redirect } from 'react-router-dom';
 // import { useAuthContext } from './hooks/useAuthContext';
 
 import Home from './pages/Home/Home';
-import Post from './pages/Post/Post';
+
 import Search from './pages/Search/Search';
 import Review from './pages/Review/Review';
 import Navbar from './components/Navbar';
@@ -24,12 +24,15 @@ function App() {
     <Navbar />
     <Routes>
     <Route path='/' element={<Home />} ></Route>
-    {/* <Route path='/picture' element={<Picture/>} ></Route> */}
-    <Route path='/post' element={user ? <Post/> : <Login/>}></Route>
     <Route path='/search' element={<Search />} ></Route>
     <Route path='/reviews/:id' element={!user ? <Review /> : <Home />} ></Route>
-    <Route path='/login' element={!user ? <Login/> : <Review />} ></Route>
-    <Route path='/signup' element={!user ? <Signup/> : <Review />} ></Route>
+    {!user ?<Route path='/login' element={ <Login/>}>
+    </Route> : <Route path='/review' element={ <Review/>}>
+    </Route> } 
+    {!user ?<Route path='/signup' element={ <Signup/>}>
+    </Route> : <Route path='/review' element={ <Review/>}>
+    </Route> } 
+    {/* <Route path='/signup' element={!user ? <Signup/> : <Review />} ></Route> */}
     </Routes>
     </BrowserRouter> 
   )}
