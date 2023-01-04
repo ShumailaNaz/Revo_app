@@ -4,45 +4,41 @@ import styles from './Navbar.module.css'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { Link } from 'react-router-dom'
-
+import menu from '../assets/menu.png'
 import Searchbar from './Searchbar'
+import { useState } from 'react'
 
 export default function Navbar() {
-  const { logout }=useLogout();
-  const { user }=useAuthContext()
+  const { logout } = useLogout();;
+  const { user } = useAuthContext();
+  const [open, setopen] = useState(false);
+  const handleclick = () => setopen(!open);
+  const closemenu = () => setopen(false);
   return (
-  
     <div className={styles['navbar']}>
-        {/* <div className="logo">
-          <img src={logo} alt="" />
+      <nav>
+        <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
+        <div onClick={handleclick} className={styles['icon']}>
+          {open ? <p>close</p> : <img src={menu} />}
         </div>
-        <div className="search">
-          <input type="text" placeholder='Search' />
-          <Link to='/Signup'> Post a Review
-          </Link>
-         
-        </div> */}
-        <nav>
-          
-          <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
-          
-          
-          {!user&&(
-          <>
-           <Link to="/login" className={styles['btn']}>Login</Link>
-           <Link to="/signup" className={styles['btn']}>Signup</Link>
-          </>
+
+        {!user && (
+          // <div className={open ? styles['navbar-links'] : styles['navbar-links']}>
+           <div className={styles['navbar-links']}>
+              <Link onClick={closemenu} to="/login" className={styles['btn']}>Login</Link>
+              <Link onClick={closemenu} to="/signup" className={styles['btn']}>Signup</Link>
+            </div>
         )}
-       {user &&( <>
-       <h5>Hey! { user.displayName }</h5>
-        <Link to="/login" className={styles['btn']}>Post a Review</Link>
-       <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
-       </>
-       )
-       }
-        </nav>
+            {user && (<div className={styles['navbar-links']}>
+              <h5>Hey! {user.displayName}</h5>
+              <Link to="/login" className={styles['btn']}>Post a Review</Link>
+              <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
+            </div>
+            )
+            }
+          </nav>
     </div>
-  
+
   )
 }
 // const Container=styled.div`

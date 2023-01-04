@@ -31,13 +31,19 @@
 
 .signup-form button{
     background: black;
-    border: 2px solid blanchedalmond;
-    padding: 6px 12px;
+    padding: 6px 26px;
     border-radius: 20px;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.5em;
+    /* display: flex; */
+    margin-left: 86px;
+}
+.signup-form button:hover{
+    background: #f5cb22; 
+    color: #363636; 
+    border: 2px solid black; 
 }
 
 .signup-form input[type="checkbox"] {

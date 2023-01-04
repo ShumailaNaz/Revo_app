@@ -3,15 +3,17 @@ import styles from './ReviewList.module.css'
 
 export default function ReviewList({ reviews }) {
   return (
-    <div className={styles['review-list']}>
-      {/* <div className={styles['review1-list']}> */}
+    <div className={styles['container']}>
+      <section>
+      <div className={styles['review-list']}>
            {reviews.map((review)=>(
            <div key={review.id} className={styles['card']}>
-           <h3> {review.restaurant}</h3>
+           <h1> {review.restaurant}</h1>
            <p >{review.comment}</p>
            </div> 
         ))}
-        {/* </div> */}
+        </div>
+        </section>
     </div>
   )
 }
