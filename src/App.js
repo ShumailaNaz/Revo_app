@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter,Route,Routes,redirect } from 'react-router-dom';
-import { useAuthContext } from './hooks/useAuthContext';
+// import { useAuthContext } from './hooks/useAuthContext';
 
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
@@ -9,13 +9,14 @@ import Review from './pages/Review/Review';
 import Navbar from './components/Navbar';
 import Login from './components/Login'
 import Signup from './components/Signup';
-
-
+import { useAuthContext } from './hooks/useAuthContext';
+import Reviews from './components/Reviews';
+// import Picture from './data/Picture';
 
 function App() {
-  const { authIsReady, user } =useAuthContext()
+  const {authIsReady, user} =useAuthContext()
 
-  return (
+ return (
 
     <div className="App">
       {authIsReady && (
@@ -23,7 +24,8 @@ function App() {
     <Navbar />
     <Routes>
     <Route path='/' element={<Home />} ></Route>
-    <Route path='/post' element={<Post />} ></Route>
+    {/* <Route path='/picture' element={<Picture/>} ></Route> */}
+    <Route path='/post' element={user ? <Post/> : <Login/>}></Route>
     <Route path='/search' element={<Search />} ></Route>
     <Route path='/reviews/:id' element={!user ? <Review /> : <Home />} ></Route>
     <Route path='/login' element={!user ? <Login/> : <Review />} ></Route>

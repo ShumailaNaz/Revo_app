@@ -1,0 +1,49 @@
+{
+    "restaurants" :[	
+     {
+         "id": 1,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img1.jpg"
+     },
+     {
+         "id": 2,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img2.jpg"
+     },
+     {
+         "id": 3,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img3.jpg"
+     },
+     {
+         "id": 4,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img4.jpg"
+     },
+     {
+         "id": 5,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img4.jpg"
+     },
+     {
+         "id": 6,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img6.jpg"
+     },
+     {
+         "id": 7,
+         "name": "Test",
+         "location": "Karachi",
+         "image": "../../images/img7.jpg"
+     }
+ 
+ ]
+ 
+ }
+ 

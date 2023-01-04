@@ -1,0 +1,84 @@
+.container{
+  max-width: 1300px;
+  width: 80%;
+  margin: auto;
+
+}
+.container section{
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
+
+.review-list{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:40px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-left: 96px;   */
+  }
+  /* .review1-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-left: 96px;  
+
+  } */
+
+  .review-list .card{
+    /* flex: 20 10 calc(44.33%-32px); */
+    flex: 0 0 calc(33.33%-20px);
+    max-width: calc(33.33% - 20px);
+    background:khaki;
+    color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+   
+    width: 100%;
+  }
+  .review-list .card:hover{
+    /* transform: rotate(3deg); */
+    background: #f5cb22; 
+}
+
+.review-list .card h1{
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 40px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.review-list .card p{
+    color: #524949;
+    font-size: 0.9em;
+}
+
+/* .review-list .card div{
+    color: #555;
+    font-size: 0.7em;
+    margin: 20px 0;
+    line-height: 1.5em;
+} */
+@media screen and (max-width:600px) {
+  .review-list .card{
+    flex: 0 0 calc(95%-20px);
+    max-width: calc(95% - 20px); 
+  }
+
+
+}

@@ -1,3 +1,4 @@
+
 import styles from './Searchbar.module.css'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useState } from 'react'
@@ -19,7 +20,7 @@ export default function Searchbar() {
 
 
   return (
-    <div className={styles.searchbar}>
+    <div className={styles['searchbar']}>
         <form onSubmit={handleSubmit}>
             <label htmlFor="search">Search:</label>
             <input type="text"
@@ -33,3 +34,4 @@ export default function Searchbar() {
         </div>
   )
 }
+

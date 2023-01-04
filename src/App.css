@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+.App{
+  
+    min-height: 100%;
+  /* width: 100%;  */
+  background-image: url("./assets/eggs-1672684976657-6788.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}

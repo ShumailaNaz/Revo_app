@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
-import { useFirestore } from "../../hooks/useFirestore";
-import { useDocuments } from "../../hooks/useDocuments";
+
+import { useState ,useEffect } from 'react'
+import { useFirestore } from '../../hooks/useFirestore';
+import { useDocuments } from '../../hooks/useDocuments';
+import styles from './Reviewform.module.css'
 import { Rating } from 'react-simple-star-rating'
+
 
 import styles from "./Review.module.css";
 export default function Reviewform({ uid }) {
@@ -50,27 +53,23 @@ export default function Reviewform({ uid }) {
   );
 
   return (
-    <div className={styles.reviewform}>
-      <h3>Add review</h3>
-      <form onSubmit={handleSubmit}>
-        {documents && (
-          <div className={styles.form}>
-            <label>
-              <span>Select restaurant:</span>
-              <select
-                name=""
-                id=""
-                onChange={(e) => setRestaurant(e.target.value)}
-                value={restaurant}
-              >
-                {documents.map((doc) => (
-                  <option value={doc.name} key={doc.id}>
-                    {doc.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <Rating
+
+    <div className={styles['review-form']}>
+    <h3>Add review</h3>
+    <form onSubmit={handleSubmit}>
+      {documents &&(
+        <>
+        <label><span>Select restaurant:</span>
+       <select name="" id=""
+       onChange={(e)=>setRestaurant(e.target.value)}
+       value={restaurant}
+       >
+      {documents.map((doc)=>(
+        <option value={doc.name} key={doc.id}>{doc.name}</option>
+      ))}
+       </select>
+        </label>
+             <Rating
         onClick={handleRating}
         ratingValue={rating}
         size={20}
@@ -82,22 +81,20 @@ export default function Reviewform({ uid }) {
       />
       {/* Use rating value */}
       {rating}
-            <label>
-              <span>Comment</span>
-              <textarea
-                name=""
-                id=""
-                cols="20"
-                rows="10"
-                required
-                onChange={(e) => setComment(e.target.value)}
-                value={comment}
-              ></textarea>
-            </label>
-            <button>Add Review</button>
-          </div>
+        <label><span>Comment</span>
+      <textarea name="" id=""
+       cols="20" rows="10"
+       required
+       onChange={(e)=>setComment(e.target.value)}
+        value={comment}
+        >
+     </textarea>
+        </label>
+        <button>Add Review</button>
+        </>
         )}
-      </form>
+    </form>
     </div>
-  );
-}
+  )
+
+
