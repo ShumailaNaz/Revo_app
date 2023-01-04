@@ -7,6 +7,7 @@ export default function ReviewList({ reviews }) {
         {reviews.map((review)=>(
             <div key={review.id}>
            <h3> {review.restaurant}</h3>
+           <p>{review.location}</p>
            <p >{review.comment}</p>
            </div> 
         ))}

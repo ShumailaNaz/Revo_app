@@ -4,6 +4,7 @@ import styles from './Navbar.module.css'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { Link } from 'react-router-dom'
+import Searchbar from './Searchbar'
 
 export default function Navbar() {
   const { logout }=useLogout();
@@ -23,12 +24,12 @@ export default function Navbar() {
         <nav>
           
           <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
-          
+          <Searchbar />
           
           {!user&&(
           <>
            <Link to="/login" className={styles['btn']}>Login</Link>
-           <Link to="/signup" className={styles['btn']}>Signup</Link>
+           {/* <Link to="/signup" className={styles['btn']}>Signup</Link> */}
           </>
         )}
        {user &&( <>
