@@ -1,5 +1,4 @@
 import React from 'react'
-import { useAsyncValue } from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import styles from './Review.module.css'
 import { useCollection } from '../../hooks/useCollection'
@@ -15,6 +14,7 @@ export default function Review() {
     ['uid','==',user.uid],
     ["createdAt","desc"]
   )
+ 
   return (
 
     <div className={styles['container']}>
@@ -25,7 +25,7 @@ export default function Review() {
       {documents && <ReviewList reviews={documents} />}
       </div>
       <div className={styles['sidebar']}>
-      <Reviewform uid={user.uid}/>
+      <Reviewform uid={user.uid} uname={user.displayname} />
       </div>
     </div>
   )

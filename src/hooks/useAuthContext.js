@@ -9,6 +9,6 @@ export const useAuthContext = ()=>{
     if(!context){
         throw Error("useAuthContext must be Authcontextprovider")
     }
-console.log(context);
+
     return context
 } 

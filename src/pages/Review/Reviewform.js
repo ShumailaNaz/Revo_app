@@ -5,18 +5,16 @@ import { useDocuments } from '../../hooks/useDocuments';
 import styles from './Reviewform.module.css'
 import { Rating } from 'react-simple-star-rating'
 
-
-import styles from "./Review.module.css";
-export default function Reviewform({ uid }) {
+export default function Reviewform({ uid ,uname }) {
   const { documents, error } = useDocuments("restaurants");
 
-  const [username, setUserName] = useState("");
+  const [userName, setUserName] = useState("");
   const [comment, setComment] = useState("");
   const [restaurant, setRestaurant] = useState("");
   const [location, setLocation] = useState("");
   const { addDocument, response } = useFirestore("reviews");
   const [rating, setRating] = useState(0) 
-
+console.log(uname);
 
   // Catch Rating value
   const handleRating = (rate) => {
@@ -32,6 +30,7 @@ export default function Reviewform({ uid }) {
       comment,
       restaurant,
       location,
+      uname
     });
   };
 
@@ -83,7 +82,7 @@ export default function Reviewform({ uid }) {
       {rating}
         <label><span>Comment</span>
       <textarea name="" id=""
-       cols="20" rows="10"
+       cols="20" rows="5"
        required
        onChange={(e)=>setComment(e.target.value)}
         value={comment}
@@ -98,3 +97,4 @@ export default function Reviewform({ uid }) {
   )
 
 
+      }
