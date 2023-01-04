@@ -1,32 +1,37 @@
 
-import React from 'react'
 import styles from './Searchbar.module.css'
+import { useAuthContext } from '../hooks/useAuthContext'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
+
 export default function Searchbar() {
-const [term, setterm] = useState('')
-const navigate = useNavigate()
+    const [term,setTerm]=useState('')
+    const{ term1,setTerm1 } =useAuthContext()
+    console.log(term1);
+ 
+    const navigation=useNavigate()
 
-const handlesubmit = (e) => {
-e.preventDefault()
-navigate(`/search?q=${term}`)
-        //q=?
-}
-    return (
-        <div className={styles['searchbar']}>
-            <form onSubmit={handlesubmit}>
-                <label htmlFor='search'>Search:</label>
-                <input type="text"
-                       id="search"
-                       onChange={(e) => setterm(e.target.value)}
-                       required
-                />
-            </form>
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        // 
+        navigation(`/search?q=${term1}`)
+    }
+
+
+
+  return (
+    <div className={styles['searchbar']}>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="search">Search:</label>
+            <input type="text"
+            id='search'
+            required
+            onChange={(e)=>setTerm1(e.target.value)}
+            value={term1}
+             />
+        </form>
+        
         </div>
-
-    )
-
+  )
 }
-
-  
 
