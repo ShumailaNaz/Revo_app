@@ -5,6 +5,7 @@
 
 }
 .container section{
+  margin-top: 50px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -77,7 +78,7 @@
 @media screen and (max-width:600px) {
   .review-list .card{
     flex: 0 0 calc(95%-20px);
-    max-width: calc(95% - 20px); 
+    max-width: calc(100% - 2px); 
   }
 
 

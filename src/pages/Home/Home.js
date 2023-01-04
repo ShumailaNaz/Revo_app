@@ -10,9 +10,9 @@ import ReviewList from '../Review/ReviewList';
 export default function Home() {
  const { documents,error }=useDocuments('reviews')
   return (
-    <div className={styles['home']}>
-      {documents && <ReviewList reviews={documents} /> }
-        </div>
+       <div className={styles['home']}>
+       {documents && <ReviewList reviews={documents} /> }
+      </div>
   )
 }
 

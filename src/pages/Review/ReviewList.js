@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from './ReviewList.module.css'
-
+import { useAuthContext } from '../../hooks/useAuthContext'
 export default function ReviewList({ reviews }) {
+
   return (
-    <div className={styles['container']}>
+      <div className={styles['container']}>
       <section>
       <div className={styles['review-list']}>
+        
            {reviews.map((review)=>(
            <div key={review.id} className={styles['card']}>
            <h1> {review.restaurant}</h1>

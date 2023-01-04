@@ -6,3 +6,11 @@
 .review-form h3{
     color: khaki;
 }
+
+@media screen and (max-width:600px) {
+    .review-form form{
+        max-width: 484px;
+        margin: auto;
+    }
+    }
+

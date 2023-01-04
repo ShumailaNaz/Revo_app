@@ -11,6 +11,7 @@ import { useState } from 'react'
 export default function Navbar() {
   const { logout } = useLogout();;
   const { user } = useAuthContext();
+
   const [open, setopen] = useState(false);
   const handleclick = () => setopen(!open);
   const closemenu = () => setopen(false);
@@ -23,13 +24,14 @@ export default function Navbar() {
         </div>
 
         {!user && (
-          // <div className={open ? styles['navbar-links'] : styles['navbar-links']}>
-           <div className={styles['navbar-links']}>
+          <div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
+        {/* <div className={styles['navbar-links']}> */}
               <Link onClick={closemenu} to="/login" className={styles['btn']}>Login</Link>
               <Link onClick={closemenu} to="/signup" className={styles['btn']}>Signup</Link>
             </div>
-        )}
-            {user && (<div className={styles['navbar-links']}>
+           )}
+            {user && 
+            (<div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
               <h5>Hey! {user.displayName}</h5>
               <Link to="/login" className={styles['btn']}>Post a Review</Link>
               <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
