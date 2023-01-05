@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./ReviewList.module.css";
 import { Rating } from "react-simple-star-rating";
@@ -22,7 +23,9 @@ export default function ReviewList({ reviews }) {
               <div className={styles["restaurant"]}>
                 <h3> {review.restaurant}</h3>
                 <p> {review.location}</p>
-              </div>
+
+               </div>
+            
               <div className={styles.rating}>
                 <Rating
                   readonly={true}
@@ -35,6 +38,7 @@ export default function ReviewList({ reviews }) {
                 />
               </div>
               <div className={styles["comment"]}>
+
                 <label htmlFor="" className={styles.comm}>
                   Comment:
                 </label>{" "}

@@ -17,7 +17,8 @@ export default function Reviewform({ uid }) {
   const { user }=useAuthContext();
 
   const [rating, setRating] = useState(0) 
-console.log(user.displayName);
+
+
 
   // Catch Rating value
   const handleRating = (rate) => {
@@ -58,10 +59,11 @@ console.log(user.displayName);
   return (
 
     <div className={styles['review-form']}>
-    <h3>Add review</h3>
+   
     <form onSubmit={handleSubmit}>
+    <h3>Add review</h3>
       {documents &&(
-        <>
+        <div>
         <label><span>Select restaurant:</span>
        <select name="" id=""
        onChange={(e)=>setRestaurant(e.target.value)}
@@ -70,9 +72,11 @@ console.log(user.displayName);
       {documents.map((doc)=>(
         <option value={doc.name} key={doc.id}>{doc.name}</option>
       ))}
+      
        </select>
         </label>
-             <Rating
+       <div>
+        <Rating
         onClick={handleRating}
         ratingValue={rating}
         size={20}
@@ -81,10 +85,12 @@ console.log(user.displayName);
         fillColor='orange'
         emptyColor='gray'
         className='foo' // Will remove the inline style if applied
-      />
-      {/* Use rating value */}
-      {rating}
-        <label><span>Comment</span>
+       />
+       {/* Use rating value */}
+       {rating}
+        </div>
+      <label>
+      <span>Comment</span>
       <textarea name="" id=""
        cols="20" rows="5"
        required
@@ -94,11 +100,9 @@ console.log(user.displayName);
      </textarea>
         </label>
         <button>Add Review</button>
-        </>
+        </div>
         )}
     </form>
     </div>
   )
-
-
-      }
+}

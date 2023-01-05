@@ -5,20 +5,26 @@
 margin-top: 20px;
 }
 .container section{
-  min-height: 50vh;
+  margin-top: 50px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   
 }
+/* .container section label{
+ font-size: medium;   
+} */
+
 
 
 
 
 .review-list{
-      display: flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    
+
+    column-gap: 20px;
+        
   }
 
 
@@ -33,6 +39,7 @@ margin-top: 20px;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     width: 100%;
+    line-height: 1.8;
   }
   .review-list .card:hover{
     /* transform: rotate(3deg); */
@@ -63,7 +70,7 @@ margin-top: 20px;
 @media screen and (max-width:600px) {
   .review-list .card{
     flex: 0 0 calc(95%-20px);
-    max-width: calc(95% - 20px); 
+    max-width: calc(100% - 2px); 
   }
 
 
