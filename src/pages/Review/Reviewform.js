@@ -6,7 +6,7 @@ import styles from './Reviewform.module.css'
 import { Rating } from 'react-simple-star-rating'
 import { useAuthContext } from '../../hooks/useAuthContext';
 
-export default function Reviewform({ uid }) {
+export default function Reviewform() {
   const { documents, error } = useDocuments("restaurants");
 
   const [userName, setUserName] = useState("");
@@ -30,7 +30,7 @@ export default function Reviewform({ uid }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDocument({
-      uid,
+      uid:user.uid,
       comment,
       restaurant,
       location,

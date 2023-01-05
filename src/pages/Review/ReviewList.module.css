@@ -22,7 +22,6 @@ margin-top: 20px;
 .review-list{
     display: flex;
     flex-wrap: wrap;
-
     column-gap: 20px;
         
   }

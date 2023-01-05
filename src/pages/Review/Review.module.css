@@ -1,11 +1,11 @@
-
+/*   
 .container .content{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+   display: grid;
+  grid-template-columns: 1fr 1fr; 
 }
 
 .container .review-list{
-  display: flex;
+   display: flex; 
 
 }
 
@@ -17,5 +17,4 @@
   box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   position: relative;
-} 
-
+}  */

@@ -239,7 +239,7 @@ justify-content: space-between;
     top: 120px;
     width: 110%;
 
-    left: -110%;
+    left: -119%;
     background:rgb(40, 37, 37);
     }
     /* .navbar .navbar-links.active{
@@ -273,5 +273,17 @@ justify-content: space-between;
     border: none;
     border-radius: 4px;
   } 
+  .navbar .brand{
+    margin-right: auto;
+    width: 40%;
+    color: #fff;
+    border: none;
+    letter-spacing: 24px;
+    text-decoration: none;    
+}
+.navbar .navbar-links-active h5{
+ margin-left: 30px;
+}
+
 }
 }

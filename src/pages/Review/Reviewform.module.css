@@ -1,15 +1,16 @@
+.review-form{
+    margin-top: 100px;
+}
 .review-form form{
     background-color: khaki;
     padding:20px;
-    
+    /* margin-top: 50px;     */
     border-radius: 10px;
     max-width: 484px;
     margin: auto;
     margin-bottom: 10px;
 }
-.review-form form span{
-    
-}
+
 .review-form form button{
     background: black;
     padding: 7px 16px;
@@ -18,14 +19,15 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 1em;
-    margin-left: 132px;
+    margin-left: 152px;
     margin-top: 10px;
 }
 
 .review-form form button:hover{
     background: #f5cb22;
     color: #363636; 
-    border: 2px solid whitesmoke;
+    border: none;
+  
 }
 
 .review-form form select{
@@ -40,6 +42,15 @@
     color: #363636; 
     border: 2px solid whitesmoke;
     border-radius: 30px; 
+}
+
+.review-form form select option::selection{
+    background-color: #000;
+}
+
+.review-form textarea{
+    width: 100%;
+    height: 100%;
 }
 
 
