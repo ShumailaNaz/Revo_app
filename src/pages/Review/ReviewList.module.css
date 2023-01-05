@@ -11,15 +11,20 @@ margin-top: 20px;
   flex-direction: column;
   
 }
+/* .container section label{
+ font-size: medium;   
+} */
+
 
 
 
 
 .review-list{
-      display: flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    
+
+    column-gap: 20px;
+        
   }
 
 
@@ -34,6 +39,7 @@ margin-top: 20px;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     width: 100%;
+    line-height: 1.8;
   }
   .review-list .card:hover{
     /* transform: rotate(3deg); */

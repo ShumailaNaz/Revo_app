@@ -21,8 +21,8 @@ export default function ReviewList({ reviews }) {
               <div className={styles["restaurant"]}>
                 <h3> {review.restaurant}</h3>
                 <p> {review.location}</p>
-              </div>
-              <div className={styles["comment"]}>
+               </div>
+                <div className={styles["comment"]}>
                 <label htmlFor="" className={styles.comm}>
                   Comment:
                 </label>{" "}

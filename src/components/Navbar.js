@@ -21,24 +21,28 @@ export default function Navbar() {
     <div className={styles['navbar']}>
       <nav>
         <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
-        <Searchbar />
+         <Searchbar/>
         <div onClick={handleclick} className={styles['icon']}>
           {open ? <p>close</p> : <img src={menu} />}
+
         </div>
 
 
         {!user && (
           <div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
         {/* <div className={styles['navbar-links']}> */}
+                     
               <Link onClick={closemenu} to="/login" className={styles['btn']}>Login</Link>
               <Link onClick={closemenu} to="/signup" className={styles['btn']}>Signup</Link>
             </div>
            )}
             {user && 
             (<div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
-              <h5>Hey! {user.displayName}</h5>
+               <h5>Hey! {user.displayName}</h5>
+          
               <Link to="/review" className={styles['btn']}>Post a Review</Link>
-              <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
+              <Link onClick={logout}className={styles['btn']}>Logout</Link>
+              {/* <button onClick={logout}>Logout</button> */}
             </div>
             )
             }

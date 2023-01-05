@@ -19,9 +19,10 @@ export default function Searchbar() {
   return (
     <div className={styles['searchbar']}>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="search">Search:</label>
+            <label htmlFor="search" ></label>
             <input type="text"
             id='search'
+            placeholder='Search here....'
             required
             onChange={(e)=>setTerm1(e.target.value)}
             value={term1}
