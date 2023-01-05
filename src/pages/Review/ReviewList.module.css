@@ -2,7 +2,7 @@
   max-width: 1300px;
   width: 80%;
   margin: auto;
-
+margin-top: 20px;
 }
 .container section{
   margin-top: 50px;
@@ -16,29 +16,14 @@
 
 
 .review-list{
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:40px; */
-    display: flex;
+      display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
-    margin-left: 96px;   */
+    
   }
-  /* .review1-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:40px;
-    max-width: 1200px;
-    margin: 40px auto;
-    margin-left: 96px;  
 
-  } */
 
   .review-list .card{
-    /* flex: 20 10 calc(44.33%-32px); */
     flex: 0 0 calc(33.33%-20px);
     max-width: calc(33.33% - 20px);
     background:khaki;
@@ -48,7 +33,6 @@
     border-radius: 4px;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
-   
     width: 100%;
   }
   .review-list .card:hover{
@@ -68,7 +52,9 @@
     color: #524949;
     font-size: 0.9em;
 }
-
+.comm{
+  font-weight: bold;
+}
 /* .review-list .card div{
     color: #555;
     font-size: 0.7em;
