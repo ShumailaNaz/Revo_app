@@ -4,8 +4,9 @@ import { useFirestore } from '../../hooks/useFirestore';
 import { useDocuments } from '../../hooks/useDocuments';
 import styles from './Reviewform.module.css'
 import { Rating } from 'react-simple-star-rating'
+import { useAuthContext } from '../../hooks/useAuthContext';
 
-export default function Reviewform({ uid ,uname }) {
+export default function Reviewform({ uid }) {
   const { documents, error } = useDocuments("restaurants");
 
   const [userName, setUserName] = useState("");
@@ -13,8 +14,10 @@ export default function Reviewform({ uid ,uname }) {
   const [restaurant, setRestaurant] = useState("");
   const [location, setLocation] = useState("");
   const { addDocument, response } = useFirestore("reviews");
+  const { user }=useAuthContext();
+
   const [rating, setRating] = useState(0) 
-console.log(uname);
+console.log(user.displayName);
 
   // Catch Rating value
   const handleRating = (rate) => {
@@ -30,7 +33,8 @@ console.log(uname);
       comment,
       restaurant,
       location,
-      uname
+      name:user.displayName,
+      rating
     });
   };
 
