@@ -68,9 +68,10 @@ export default function Reviewform() {
        <select name="" id=""
        onChange={(e)=>setRestaurant(e.target.value)}
        value={restaurant}
+       required
        >
       {documents.map((doc)=>(
-        <option value={doc.name} key={doc.id}>{doc.name}</option>
+        <option value={doc.name} key={doc.id} selected>{doc.name}</option>
       ))}
       
        </select>
@@ -86,8 +87,7 @@ export default function Reviewform() {
         emptyColor='gray'
         className='foo' // Will remove the inline style if applied
        />
-       {/* Use rating value */}
-       {rating}
+      
         </div>
       <label>
       <span>Comment</span>

@@ -28,6 +28,15 @@
     color: #777;
     width: 100%;
 }
+.signup-form .member{
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 18px;
+}
+.signup-form .member:hover{
+    text-decoration: underline;
+    font-size: 19px;
+ }
 
 .signup-form button{
     background: black;
@@ -41,7 +50,7 @@
     margin-left: 86px;
 }
 .signup-form button:hover{
-    background:rgba(250,153,50); 
+    background:#ecc93f; 
     color: #363636; 
     border: 2px solid black; 
 }

@@ -23,16 +23,23 @@ const handlesubmit =(e)=>{
       <h2>Welcome back</h2>
       <label>
         <span>Email address:</span>
-        <input type="email" onChange={(e)=>setemail(e.target.value)} value={email}/>
+        <input type="email" 
+        onChange={(e)=>setemail(e.target.value)} 
+        value={email}
+        required />
       </label>
       <label>
         <span>Password:</span>
-        <input type="password" onChange={(e)=>setpassword(e.target.value)} value={password}/>
+        <input type="password" 
+        required
+        onChange={(e)=>setpassword(e.target.value)} 
+        value={password}/>
       </label>
+      {error && <p>{ error }</p>}
       {!isPending &&<button className={styles['button']}>Login</button>}
       {isPending && <button className='btn' disabled >Loading...</button>}
-     {error && <p>{error}</p>}
-     <p>Not a member? <Link to='/Signup'>Signup</Link></p>
+   
+     <p>Not a member? <Link to='/Signup' className={styles.member}>Signup</Link></p>
     </form>
     </div>
   )

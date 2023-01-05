@@ -20,27 +20,30 @@ export default function Signup() {
       <form onSubmit={handlesubmit} className={styles["signup-form"]}>
         <h2>Join to post your review.</h2>
         <label>
-          <span>user name:</span>
+          <span>Enter Name:</span>
           <input
             type="text"
             onChange={(e) => setdisplayName(e.target.value)}
             value={displayName}
+            required
           />
         </label>
         <label>
-          <span>email address:</span>
+          <span>Email address:</span>
           <input
             type="email"
             onChange={(e) => setemail(e.target.value)}
             value={email}
+            required
           />
         </label>
         <label>
-          <span>password:</span>
+          <span>Password:</span>
           <input
             type="password"
             onChange={(e) => setpassword(e.target.value)}
             value={password}
+            required
           />
         </label>
         {!isPending &&<button className={styles["button"]}>
@@ -49,16 +52,10 @@ export default function Signup() {
          {isPending && <button className='btn'disabled>Loading</button>}
         {error && <p>{error}</p>}
 
-        {/* <div className={styles['checkbox']}>
-         <input type="checkbox" id="checkbox" />
-						<label className="checkbox-label" htmlFor="checkbox">
-							Accept T&Cs and Privacy Policy
-						</label>
-					</div> */}
         <p>
-          Already a member? <Link to="/login">Login</Link>
+          Already a member? <Link to="/login" className={styles.member}>Login</Link>
         </p>
-        {/* <button className={styles['button']} onClick={logout}>Logout</button> */}
+       
       </form>
     </div>
   );

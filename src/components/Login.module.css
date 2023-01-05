@@ -45,7 +45,16 @@
     margin-left: 100px;
 }
 .login-form button:hover{
-    background:rgba(250,153,50); 
+    background:#ecc93f; 
     color: #363636; 
     border: 2px solid black; 
 }
+.login-form .member{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+ }
+ .login-form .member:hover{
+     text-decoration: underline;
+     font-size: 19px;
+  }
