@@ -40,9 +40,13 @@ export default function Navbar() {
             (<div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
                <h5>Hey! {user.displayName}</h5>
           
-              <Link to="/review" className={styles['btn']}>Post a Review</Link>
-              <Link onClick={logout}className={styles['btn']}>Logout</Link>
-              {/* <button onClick={logout}>Logout</button> */}
+
+      
+            {user && (<div className={styles['navbar-links']}>
+              <h5>Hey! {user.displayName}</h5>
+              <Link to="/postreview" className={styles['btn']}>Post a Review</Link>
+              <Link to="/yourreview" className={styles['btn']}>View Review</Link>
+              <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
             </div>
             )
             }
