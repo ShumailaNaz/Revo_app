@@ -18,9 +18,7 @@ export default function Review() {
   return (
 
     <div className={styles['container']}>
-    
       <div className={styles['content']}>
-
       {error && <p>{error}</p>}
       {documents && <ReviewList reviews={documents} />}
       </div>

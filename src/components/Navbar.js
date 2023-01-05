@@ -29,22 +29,18 @@ export default function Navbar() {
 
 
         {!user && (
-          <div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
-        {/* <div className={styles['navbar-links']}> */}
-                     
+          <div className={open ? styles['navbar-links-active'] :
+           styles['navbar-links']}>
+      
               <Link onClick={closemenu} to="/login" className={styles['btn']}>Login</Link>
               <Link onClick={closemenu} to="/signup" className={styles['btn']}>Signup</Link>
             </div>
            )}
             {user && 
-            (<div className={open ? styles['navbar-links-active'] : styles['navbar-links']}>
+            (<div className={open ? styles['navbar-links-active'] : 
+            styles['navbar-links']}>
                <h5>Hey! {user.displayName}</h5>
-          
-
-      
-            {user && (<div className={styles['navbar-links']}>
-              <h5>Hey! {user.displayName}</h5>
-              <Link to="/postreview" className={styles['btn']}>Post a Review</Link>
+               <Link to="/postreview" className={styles['btn']}>Post a Review</Link>
               <Link to="/yourreview" className={styles['btn']}>View Review</Link>
               <button className={styles['btn btn-logout']} onClick={logout}>Logout</button>
             </div>
@@ -53,5 +49,5 @@ export default function Navbar() {
           </nav>
     </div>
 
-  )
-}
+            )
+          }
