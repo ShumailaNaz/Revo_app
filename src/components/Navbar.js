@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link to="/" className={styles['brand']}><h1>REVO</h1></Link>
          <Searchbar/>
         <div onClick={handleclick} className={styles['icon']}>
-          {open ? <label className={styles.close}>X</label> : <img src={menu} />}
+          {open ? <img src={menu} /> : <img src={menu} />}
 
         </div>
 
