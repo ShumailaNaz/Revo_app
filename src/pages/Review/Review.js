@@ -14,7 +14,7 @@ export default function Review() {
     ['uid','==',user.uid],
     ["createdAt","desc"]
   )
- console.log(user);
+
   return (
 
     <div className={styles['container']}>

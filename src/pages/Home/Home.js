@@ -14,6 +14,7 @@ import Search from "../Search/Search";
 export default function Home() {
   const { documents, error } = useDocuments("reviews");
   const { term1, setTerm1 } = useAuthContext();
+  
 
   return (
     <div className={styles["home"]}>
